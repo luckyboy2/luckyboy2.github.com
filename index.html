@@ -1,0 +1,86 @@
+<<<<<<< HEAD
+<?include_once("./head.php");?>
+<div onclick='javascript:location.href="poison/poison.php"'>스마트폰 중독 테스트</div><br><hr>
+<div onclick='javascript:location.href="birth/birth.php"'>내가 이세상에 태어난 이유는?</div><br><hr>
+<div onclick='javascript:location.href="cookie/cookie.php"'>쿠키런 낚시 메세지 보내기</div><br><hr>
+<div onclick='#'>준비중</div><br><hr>
+<div onclick='#'>준비중</div><br><hr>
+<div onclick='#'>준비중</div><br><hr>
+<div onclick='#'>준비중</div><br>
+<?include_once("./foot.php");?>
+=======
+﻿<?include_once("./head.html");?>
+<div style="background:#F7F7F0; border-radius:30px; padding:20px; margin:10px">
+
+	<h1>나와 가장 어울리는 연예인</h1>
+	<p class="description">입력하는 정보는 저장하거나, 활용하지 않으니 안심하세요 ^^</p>
+
+	<div class="sumit">
+		<input text="text" placeholder="태어난 연도" class="inputName" style="width:90px">
+		<input text="text" placeholder="월" class="inputName" style="width:60px">
+		<input text="text" placeholder="일" class="inputName" style="width:60px">
+	</div>
+
+	<div class="section">
+		<div class="clearfix prettyradio labelright  blue ">
+			<input type="radio" class="myClass" name="gender" value="male" id="boy" data-label="남자" style="display: none;">
+				<a href="#" class="checked"></a>
+			<label for="boy">남자</label>
+		</div>
+		<div class="clearfix prettyradio labelright  blue ">
+			<input type="radio" class="myClass" name="gender" value="male" id="boy" data-label="남자" style="display: none;">
+				<a href="#" class=""></a>
+			<label for="boy">여자</label>
+		</div>
+	</div>
+	
+	<div class="sumit">
+		<input text="text" placeholder="이름을 입력하세요." class="inputName" style="width:240px">
+	</div>
+	
+	<div class="sumit">
+		<button id="btnLink">카카오 스토리로 확인</button>
+	</div>
+	<div class="sumit">
+		<button id="btnLink">카톡친구 초대</button>
+	</div>
+	
+</div>
+</div>
+
+<script type="text/javascript" src="../js/kakao.link.js"></script>
+<script type="text/javascript">
+
+window.addEventListener("load", initPage, false);
+function initPage(){
+	document.querySelector('#btnLink').addEventListener('click', function(){
+		executeKakaoStoryLink()
+	}, false)
+	
+	document.querySelector('#btnLink').addEventListener('click', function(){
+		executeURLLink()
+	}, false)
+}
+function executeKakaoStoryLink(){
+    kakao.link("story").send({   
+        post :  "[당신을 판매해봅시다] \n김철수님의 가격은 98만원입니다. \n\n특징 \n1. 목소리가 좋습니다.\n2. 지친 삶을 위로해줍니다.\n3. 훌륭한 노예입니다.\n\n주의사항 : 외로움을 많이 타는 상품입니다.\n\nhttp://goo.gl/ajszk",
+        appid : "fbappin.com",
+        appver : "1.0",
+        appname : "재미있는앱",
+        urlinfo : JSON.stringify({title:"당신을 판매해봅시다", desc:"바로 당신의 광고입니다", imageurl:["http://fbappin.com/sell/sell_test.gif"], type:"article"})
+    });
+}
+
+function executeURLLink() {
+    kakao.link("talk").send({
+        msg: "바로 당신의 광고입니다.",
+        url: "http://goo.gl/ajszk",
+        appid: "kaiequal.com",
+        appver: "2.0",
+        appname: "당신을 판매해봅시다.",
+        type: "link"
+    });
+}
+</script>
+<?include_once("./foot.html");?>
+>>>>>>> 0808
